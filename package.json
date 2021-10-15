@@ -1,11 +1,11 @@
 {
   "name": "electron-auto-update-example",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "main.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/doomshellyogesh/testapp.git"
+    "type": "git",
+    "url": "https://github.com/doomshellyogesh/testapp.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,13 +13,24 @@
     "build": "electron-builder build  --win --publish never",
     "deploy": "electron-builder build  --win --publish always"
   },
+  "build": {
+    "productName": "electron-auto-update-example",
+    "appId": "com.example.ElectronAutoUpdate",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "type": "development"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^5.0.1",
-    "electron-builder": "^20.40.2"
+    "electron": "^10.0.0",
+    "electron-builder": "^22.13.1"
   },
   "dependencies": {
-    "electron-updater": "^4.0.6"
+    "electron-updater": "^4.3.9"
   }
 }
